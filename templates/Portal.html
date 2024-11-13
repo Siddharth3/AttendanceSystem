@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .button {
+            font-size: 16px;
+            padding: 10px 20px;
+            margin: 20px;
+            cursor: pointer;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+        }
+        .add-student {
+            background-color: #4CAF50;
+        }
+        .give-attendance {
+            background-color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Attendance Portal</h1>
+
+    <button class="button add-student" onclick="addStudent()">Add Student</button>
+    <button class="button give-attendance" onclick="giveAttendance()">Give Attendance</button>
+
+    <script>
+        function addStudent() {
+            alert("Add Student form will be here.");
+            // Code for adding student details can be placed here
+        }
+
+        function giveAttendance() {
+            fetch("/give-attendance")
+                .then(response => response.json())
+                .then(data => alert(data.message))
+                .catch(error => console.error("Error:", error));
+        }
+    </script>
+
+</body>
+</html>
